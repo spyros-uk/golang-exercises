@@ -1,0 +1,32 @@
+!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Golang Template</title>
+</head>
+<body>
+<ul>
+    {{ range $year := . }}
+        <li>
+            <div>
+                {{$year.AcaYear}}
+            </div>
+            <div>
+                {{$year.Fall.Term}}
+            </div>
+            {{template "courses" .Fall.Courses}}
+        </li>
+        <li>
+            <div>
+                {{$year.AcaYear}}
+            </div>
+            <div>
+                {{$year.Spring.Term}}
+            </div>
+            {{template "courses" .Fall.Courses}}
+        </li>
+    {{end}}
+</ul>
+</body>
+</html>

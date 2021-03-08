@@ -1,0 +1,12 @@
+{{define "courses"}}
+    <div>
+        Courses:
+        <ul>
+            {{range $course := .}}
+                <li>
+                    {{$course.Number}} - {{$course.Name}} - {{$course.Units}}
+                </li>
+            {{end}}
+        </ul>
+    </div>
+{{end}}
