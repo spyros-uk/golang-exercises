@@ -27,12 +27,12 @@ type year struct {
 var tpl *template.Template
 
 func init() {
-	tpl = template.Must(template.ParseFiles("tpl.gohtml", "courses.gohtml"))
+	tpl = template.Must(template.ParseFiles("view/academic-years.gohtml", "view/courses.gohtml"))
 }
 
 func main() {
 	years := []year{
-		year{
+		{
 			AcaYear: "2020-2021",
 			Fall: semester{
 				Term: "Fall",
@@ -51,7 +51,7 @@ func main() {
 				},
 			},
 		},
-		year{
+		{
 			AcaYear: "2021-2022",
 			Fall: semester{
 				Term: "Fall",
