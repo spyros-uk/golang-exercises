@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 func TestAdd(t *testing.T) {
 	total := Add(5, 5)
@@ -28,4 +31,9 @@ func TestMultiply(t *testing.T) {
 			t.Errorf("Multiply case %d - Multiplying %d with %d got %d, expected: %d", id, tc.a, tc.b, total, tc.expected)
 		}
 	}
+}
+
+func TestSub(t *testing.T) {
+	total := Sub(15, 5)
+	assert.Equal(t, total, 10, "True is true!")
 }
